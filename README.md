@@ -129,5 +129,5 @@ NLStart(nl.path,nl.jarname = paste0("netlogo-",ver,".jar")) # open netlogo
 ```  
 
 ## References    
-[Running RNetlogo in JGR](https://groups.yahoo.com/neo/groups/netlogo-users/conversations/topics/14817)  
+- [Running RNetlogo in JGR](https://groups.yahoo.com/neo/groups/netlogo-users/conversations/topics/14817)  
 
