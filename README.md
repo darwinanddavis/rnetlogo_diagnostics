@@ -128,4 +128,6 @@ nl.model <- "DEB_INF_IBM_almost_working2.nlogo" # name of Netlogo model
 NLStart(nl.path,nl.jarname = paste0("netlogo-",ver,".jar")) # open netlogo
 ```  
 
+## References    
+[Running RNetlogo in JGR](https://groups.yahoo.com/neo/groups/netlogo-users/conversations/topics/14817)  
 
