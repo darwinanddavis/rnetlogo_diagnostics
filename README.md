@@ -6,7 +6,6 @@
 
 ##### *Corresponding author: matthew.malishev@gmail.com  
 
-doi: [![DOI]()  
 :link: [Github](https://github.com/darwinanddavis/rnetlogo_diagnostics)  
 
 Versions:  
@@ -77,7 +76,18 @@ if(test.java==1){
 :five: [Running Netlogo 6.0.+](https://github.com/NetLogo/NetLogo/issues/1282)  
 :six: The following error in `R` means you have successfully navigated the `rJava` errors, but are running into a Java issue that's preventing R from generating the NetLogo GUI from R:  
 ```{r}
-
+java.awt.HeadlessException
+    at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:204)
+    at java.awt.Window.<init>(Window.java:536)
+    at java.awt.Frame.<init>(Frame.java:420)
+    at java.awt.Frame.<init>(Frame.java:385)
+    at javax.swing.SwingUtilities$SharedOwnerFrame.<init>(SwingUtilities.java:1758)
+    at javax.swing.SwingUtilities.getSharedOwnerFrame(SwingUtilities.java:1833)
+    at javax.swing.JOptionPane.getRootFrame(JOptionPane.java:1696)
+    at javax.swing.JOptionPane.showOptionDialog(JOptionPane.java:863)
+    at javax.swing.JOptionPane.showMessageDialog(JOptionPane.java:666)
+    at javax.swing.JOptionPane.showMessageDialog(JOptionPane.java:637)
+    at nlcon.NLink.<init>(NLink.java:109)  
 ```  
 
 The `NLStart()` function should run successfully with `gui=F`, which launches headless mode.     
@@ -96,8 +106,9 @@ In RStudio:
   Then run the normal `NLLoad()` and `NLStart` functions to launch Netlogo.  
   
 ### Attempted diagnostics:  
-25-9-18  
-1.   
+25-9-18    
+
+1.     
 ```{r}
 Sys.setenv(NOAWT=1)   
 Sys.unsetenv("NOAWT") 
