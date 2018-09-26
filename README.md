@@ -32,7 +32,7 @@ File extensions:
 ### :pig: Troubleshooting steps for diagnosing Java, `rJava`, and `RNetLogo` errors when setting up NetLogo model in RStudio for Mac OSX (10+).     
   
 :one: [Installing compiler toolchain for Mac OSX](https://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-macos/)    
-:two: if rJava error persists, run the following in Terminal (src: https://stackoverflow.com/questions/30738974/rjava-load-error-in-rstudio-r-after-upgrading-to-osx-yosemite) and http://paulklemm.com/blog/2015-02-20-run-rjava-with-rstudio-under-osx-10-dot-10/):  
+:two: if rJava error persists, run the following in Terminal (https://stackoverflow.com/questions/30738974/rjava-load-error-in-rstudio-r-after-upgrading-to-osx-yosemite) and http://paulklemm.com/blog/2015-02-20-run-rjava-with-rstudio-under-osx-10-dot-10/):  
 ``` sudo ln -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/local/lib ```  
 :three: Java troubleshooting. Run the following code in `R` (tests are sequential):    
 ```{r}
@@ -128,7 +128,11 @@ nl.model <- "DEB_INF_IBM_almost_working2.nlogo" # name of Netlogo model
 NLStart(nl.path,nl.jarname = paste0("netlogo-",ver,".jar")) # open netlogo
 ```  
 
-## References    
+## References  
+- [Compiler toolchain for Mac OSX](https://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-macos/)  
+- Diagnosing `rjava` error: [link 1](https://stackoverflow.com/questions/30738974/rjava-load-error-in-rstudio-r-after-upgrading-to-osx-yosemite) and [link 2](http://paulklemm.com/blog/2015-02-20-run-rjava-with-rstudio-under-osx-10-dot-10/)  
 - [Running RNetlogo in JGR](https://groups.yahoo.com/neo/groups/netlogo-users/conversations/topics/14817)  
 - [2018 Git post summarising current troubleshooting notes](https://github.com/NetLogo/NetLogo/issues/1282)  
+- [Java troubleshooting](https://stackoverflow.com/questions/14915898/rnetlogo-function-nlstart-fails-to-launch-gui)  
+- 
 
