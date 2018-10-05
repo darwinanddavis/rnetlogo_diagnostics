@@ -94,7 +94,8 @@ The `NLStart()` function should run successfully with `gui=F`, which launches he
 `NLStart(nl.path,gui=F,nl.jarname = paste0("netlogo-",ver,".jar")) # open netlogo`  
 
 :seven: If none of the above steps work in RStudio, you can run Netlogo from `JGR`, the Java version of `R`.   
-In RStudio:  
+   
+In RStudio, run the following:  
 ```{r}
 # load JGR after downloading 
   Sys.setenv(NOAWT=1)
@@ -103,7 +104,7 @@ In RStudio:
   Sys.unsetenv("NOAWT")
   JGR() # open JGR  
   ```  
-  Then run the normal `NLLoad()` and `NLStart` functions to launch Netlogo.  
+  Then run the normal `NLLoad()` and `NLStart()` functions in JGR to launch Netlogo.  
   
 ### Attempted diagnostics:  
 25-9-18    
