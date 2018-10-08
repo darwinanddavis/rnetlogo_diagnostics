@@ -30,9 +30,21 @@ File extensions:
 ******  
 
 ### :pig: Troubleshooting steps for diagnosing Java, `rJava`, and `RNetLogo` errors when setting up NetLogo model in RStudio for Mac OSX (10+).     
+
+```{r}
+# setup netlogo in r  
+ver <-"6.0.4" # type in Netlogo version
+nl.path <- "<netlogo path>" ; nl.path # set path to Netlogo program location
+model.path <- "<netlogo model path>" # set path to Netlogo model    
+nl.model <- "<netlogo model>" # netlogo model. file = .nlogo  
+
+nl.path <- paste0(nl.path,"NetLogo ",ver,"/Java/"); nl.path
+model.path <- paste0(,"/"); model.path   
+
+```
   
 :one: [Installing compiler toolchain for Mac OSX](https://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-macos/)    
-:two: if rJava error persists, run the following in Terminal (https://stackoverflow.com/questions/30738974/rjava-load-error-in-rstudio-r-after-upgrading-to-osx-yosemite) and http://paulklemm.com/blog/2015-02-20-run-rjava-with-rstudio-under-osx-10-dot-10/):  
+:two: If rJava error persists, run the following in Terminal (sources: https://stackoverflow.com/questions/30738974/rjava-load-error-in-rstudio-r-after-upgrading-to-osx-yosemite and http://paulklemm.com/blog/2015-02-20-run-rjava-with-rstudio-under-osx-10-dot-10/):  
 ``` sudo ln -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/local/lib ```  
 :three: Java troubleshooting. Run the following code in `R` (tests are sequential):    
 ```{r}
@@ -72,9 +84,9 @@ if(test.java==1){
 }
 
 ```  
-:four: [GCC compiler in R __(unconfirmed)__](https://stackoverflow.com/questions/1616983/building-r-packages-using-alternate-gcc)  
+:four: [GCC compiler in `R`__(unconfirmed)__](https://stackoverflow.com/questions/1616983/building-r-packages-using-alternate-gcc)  
 :five: [Running Netlogo 6.0.+](https://github.com/NetLogo/NetLogo/issues/1282)  
-:six: The following error in `R` means you have successfully navigated the `rJava` errors, but are running into a Java issue that's preventing R from generating the NetLogo GUI from R:  
+:six: The following error in `R` when executing `NLStart()` means you have successfully navigated the `rJava` errors, but are running into a Java issue that's preventing `R` from generating the NetLogo GUI from `R`:  
 ```{r}
 java.awt.HeadlessException
     at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:204)
@@ -90,12 +102,12 @@ java.awt.HeadlessException
     at nlcon.NLink.<init>(NLink.java:109)  
 ```  
 
-The `NLStart()` function should run successfully with `gui=F`, which launches headless mode.     
+For the above error, the `NLStart()` function should run successfully with `gui=F`, which launches a headless GUI mode.     
 `NLStart(nl.path,gui=F,nl.jarname = paste0("netlogo-",ver,".jar")) # open netlogo`  
 
-:seven: If none of the above steps work in RStudio, you can run Netlogo from `JGR`, the Java version of `R`.   
+:seven: If none of the above steps work in R/RStudio, you can run Netlogo from `JGR`, the Java version of `R`.   
    
-In RStudio, run the following:  
+In R/RStudio, run the following:  
 ```{r}
 # load JGR after downloading 
   Sys.setenv(NOAWT=1)
