@@ -31,6 +31,7 @@ File extensions:
 
 ### :pig: Troubleshooting steps for diagnosing Java, `rJava`, and `RNetLogo` errors when setting up NetLogo model in RStudio for Mac OSX (10+).     
 
+First set Netlogo paths in `R`     
 ```{r}
 # setup netlogo in r  
 ver <-"6.0.4" # type in Netlogo version
