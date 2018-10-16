@@ -148,5 +148,4 @@ NLStart(nl.path,nl.jarname = paste0("netlogo-",ver,".jar")) # open netlogo
 - [Running RNetlogo in JGR](https://groups.yahoo.com/neo/groups/netlogo-users/conversations/topics/14817)  
 - [2018 Git post summarising current troubleshooting notes](https://github.com/NetLogo/NetLogo/issues/1282)  
 - [Java troubleshooting](https://stackoverflow.com/questions/14915898/rnetlogo-function-nlstart-fails-to-launch-gui)  
-- 
 
