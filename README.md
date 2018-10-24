@@ -109,13 +109,10 @@ For the above error, the `NLStart()` function should run successfully with `gui=
 :seven: If none of the above steps work in R/RStudio, you can run Netlogo from `JGR`, the Java version of `R`.   
    
 In R/RStudio, run the following:  
-```{r}
-# load JGR after downloading 
-  Sys.setenv(NOAWT=1)
-  install.packages("JGR")
-  library(JGR)
-  Sys.unsetenv("NOAWT")
-  JGR() # open JGR  
+```{r}  
+install.packages('JGR',,'http://www.rforge.net/')  
+library(JGR)  
+JGR::JGR()# open JGR  
   ```  
   Then run the normal `NLLoad()` and `NLStart()` functions in JGR to launch Netlogo.  
   
